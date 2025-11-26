@@ -1,0 +1,3 @@
+# Ignore the shared virtual environment
+/srv/myapp/shared/venv/
+/srv/myapp/shared/logs/access.log
