@@ -26,7 +26,7 @@ from django.http import HttpResponse
 from django.urls import path
 
 def index(request):
-    return HttpResponse("Hello from Django 12!")
+    return HttpResponse("Hello from Django 13!")
 
 urlpatterns = [
     path('', index),  # Root path
