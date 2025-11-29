@@ -34,7 +34,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no ${{ secrets.DO_SERVER_USER }}@${{ secrets.DO_SERVER_IP }} << 'EOSSH'
             set -e
-            cd /srv/myapp
+            cd /srv/myapp/current
             git reset --hard HEAD && git clean -df
             git pull origin master
             source shared/venv/bin/activate
