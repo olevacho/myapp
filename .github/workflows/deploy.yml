@@ -2,8 +2,8 @@ name: Deploy to Production
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:  # allow manual trigger if needed
+    branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -11,7 +11,7 @@ jobs:
 
     concurrency:
       group: production-deploy
-      cancel-in-progress: true  # cancel any prior run if a new one starts
+      cancel-in-progress: true
 
     steps:
       - name: Check out code
@@ -36,7 +36,7 @@ jobs:
             set -e
             cd /srv/myapp
             git reset --hard HEAD && git clean -df
-            git pull origin main
+            git pull origin master
             source shared/venv/bin/activate
             python manage.py migrate --noinput
             python manage.py collectstatic --noinput
