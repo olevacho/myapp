@@ -37,7 +37,7 @@ jobs:
             cd /srv/myapp/current
             git reset --hard HEAD && git clean -df
             git pull origin master
-            source shared/venv/bin/activate
+            source /srv/myapp/shared/venv/bin/activate
             python manage.py migrate --noinput
             python manage.py collectstatic --noinput
             deactivate
